@@ -18,7 +18,8 @@
     "cssnano": "^7.0.1",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "vite": "^5.2.11"
+    "vite": "^5.2.11",
+    "vite-plugin-pwa": "^0.20.0"
   },
   "description": "Armenian state and religious holidays PWA",
   "main": "postcss.config.js",
