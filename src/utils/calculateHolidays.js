@@ -1,4 +1,4 @@
-import { calculateEaster } from "./calculateEaster.js";
+import { getWesternEaster } from "easter-date.js";
 
 function formatDate(date) {
   const day = date.getDate().toString().padStart(2, "0");
@@ -13,7 +13,7 @@ function dateCalc(date, days) {
 }
 
 export function calculateHolidays(year) {
-  const easterDate = calculateEaster(year);
+  const easterDate = getWesternEaster(year);
   const easter = new Date(
     easterDate.year,
     easterDate.month - 1,
@@ -28,12 +28,14 @@ export function calculateHolidays(year) {
     ripsimeDay: dateCalc(easter, 57),
     echmiadzinDay: dateCalc(easter, 63),
     vardavarDay: dateCalc(easter, 98),
-    grapesDay: new Date(easter.getFullYear(), 6, 15),
+    grapesDay: new Date(easter.getFullYear(), 7, 15),
     translatorDay: new Date(easter.getFullYear(), 8, 9),
   };
 
   holidays.grapesDay.setDate(
-    holidays.grapesDay.getDate() + ((4 - holidays.grapesDay.getDay()) % 7)
+    holidays.grapesDay.getDate() + (holidays.grapesDay.getDay() >= 4 
+      ? 7 - holidays.grapesDay.getDay() 
+      : -holidays.grapesDay.getDay())
   );
 
   holidays.translatorDay.setDate(
