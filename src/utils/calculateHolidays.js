@@ -29,7 +29,7 @@ export function calculateHolidays(year) {
     echmiadzinDay: dateCalc(easter, 63),
     vardavarDay: dateCalc(easter, 98),
     grapesDay: new Date(easter.getFullYear(), 7, 15),
-    translatorDay: new Date(easter.getFullYear(), 8, 9),
+    translatorDay: new Date(easter.getFullYear(), 9, 9),
   };
 
   holidays.grapesDay.setDate(
@@ -39,8 +39,9 @@ export function calculateHolidays(year) {
   );
 
   holidays.translatorDay.setDate(
-    holidays.translatorDay.getDate() +
-      ((6 - holidays.translatorDay.getDay()) % 7)
+    holidays.translatorDay.getDate() + (holidays.translatorDay.getDay() <= 6 
+      ? 6 - holidays.translatorDay.getDay() 
+      : -holidays.translatorDay.getDay())
   );
 
   Object.keys(holidays).forEach((key) => {
