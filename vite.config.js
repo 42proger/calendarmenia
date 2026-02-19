@@ -7,6 +7,7 @@ const vitePWA = VitePWA({
   outDir: "dist",
   includeAssets: ['**/*.{svg, png, jpg, jpeg, ico}'],
   manifest: {
+    id: "/calendarmenia/",
     name: "Armenian Calendar",
     short_name: "Calendar",
     description: "A simple PWA for tracking state and religious holidays in Armenia",
