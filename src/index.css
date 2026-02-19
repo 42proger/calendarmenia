@@ -1,11 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
   body {
     @apply flex justify-center bg-sky-900 bg-fixed bg-cover bg-center backdrop-brightness-90;
-    background-image: theme("backgroundImage.main-background");
+    background-image: url("/assets/images/mountains.svg");
   }
   p {
     @apply mb-2 leading-relaxed;
