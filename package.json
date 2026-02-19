@@ -8,6 +8,9 @@
     "build": "vite build",
     "preview": "vite preview --port 8080"
   },
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "dependencies": {
     "easter-date.js": "^0.2.0",
     "vue": "^3.5.28",
