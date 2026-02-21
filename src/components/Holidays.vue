@@ -26,7 +26,7 @@ const getHolidayDescription = (holiday) => {
       <details class="group block w-full text-blue-300 open:text-white hover:text-white">
         <summary class="cursor-pointer pt-3 pb-2 font-mono select-none">
           <span class="group-open:hidden">{{ t("holidays.moreDetails") }}</span>
-          <span class="hidden group-open:inline">{{ t("holidays.collapse") }}</span>
+          <span class="hidden group-open:inline underline">{{ t("holidays.collapse") }}</span>
         </summary>
         <p v-html="getHolidayDescription(holiday)" class="mt-5"></p>
       </details>
