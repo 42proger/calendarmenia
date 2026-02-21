@@ -5,7 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 const vitePWA = VitePWA({
   registerType: "autoUpdate",
   outDir: "dist",
-  includeAssets: ['**/*.{svg, png, jpg, jpeg, ico}'],
+  includeAssets: ['**/*.{svg,png,jpg,jpeg,ico}'],
   manifest: {
     id: "/calendarmenia/",
     name: "Armenian Calendar",

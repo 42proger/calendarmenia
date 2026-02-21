@@ -1,14 +1,16 @@
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import store from "../store/index.js";
 
-const inputYear = ref(store.state.inputYear);
+const inputYear = computed({
+  get: () => store.state.inputYear,
+  set: (val) => store.commit("setInputYear", val)
+});
 
 const updateYear = function (amount) {
   const year = parseInt(inputYear.value) + amount;
   if (year >= 301 && year <= 3000) {
     inputYear.value = year;
-    store.commit("setInputYear", year);
   }
 };
 </script>
