@@ -33,14 +33,14 @@ export function calculateHolidays(year) {
   };
 
   holidays.grapesDay.setDate(
-    holidays.grapesDay.getDate() + (holidays.grapesDay.getDay() >= 4 
-      ? 7 - holidays.grapesDay.getDay() 
+    holidays.grapesDay.getDate() + (holidays.grapesDay.getDay() >= 4
+      ? 7 - holidays.grapesDay.getDay()
       : -holidays.grapesDay.getDay())
   );
 
   holidays.translatorDay.setDate(
-    holidays.translatorDay.getDate() + (holidays.translatorDay.getDay() <= 6 
-      ? 6 - holidays.translatorDay.getDay() 
+    holidays.translatorDay.getDate() + (holidays.translatorDay.getDay() <= 6
+      ? 6 - holidays.translatorDay.getDay()
       : -holidays.translatorDay.getDay())
   );
 

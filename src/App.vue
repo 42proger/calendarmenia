@@ -4,10 +4,16 @@ import LanguageSwitcher from "./components/LanguageSwitcher.vue";
 import Holidays from "./components/Holidays.vue";
 import jsonData from "./data/data.json";
 import { useI18n } from "vue-i18n";
+import { watchEffect } from "vue";
 import store from "./store/index.js";
 
 const holidaysData = jsonData.articles;
-const { t } = useI18n({ useScope: "global" });
+const { t, locale } = useI18n({ useScope: "global" });
+
+watchEffect(() => {
+  document.title = t("app.pageTitle");
+  document.documentElement.lang = locale.value;
+});
 </script>
 
 <template>

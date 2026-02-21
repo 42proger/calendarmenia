@@ -1,6 +1,7 @@
 {
   "app": {
     "title": "Calendrier 🇦🇲 des fêtes",
+    "pageTitle": "Calendrier des fêtes arméniennes 🇦🇲",
     "language": "Langue",
     "holidaysForYear": "Fêtes en {year}"
   },
