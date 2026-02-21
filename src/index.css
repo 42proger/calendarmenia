@@ -26,8 +26,6 @@
     padding: 1.5rem;
     padding-top: calc(1.5rem + env(safe-area-inset-top));
     padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
-    backdrop-filter: blur(64px);
-    -webkit-backdrop-filter: blur(64px);
   }
 
   @media (min-width: 640px) {
@@ -45,13 +43,11 @@
   }
 
   .glass-effect-md {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    @apply backdrop-blur-md;
   }
 
   .glass-effect-sm {
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    @apply backdrop-blur-sm;
   }
 
   input[type="number"]::-webkit-outer-spin-button,
@@ -66,4 +62,8 @@
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
   }
+}
+
+#app {
+  @apply backdrop-blur-[64px];
 }
