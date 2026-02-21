@@ -12,16 +12,14 @@ const { t } = useI18n({ useScope: "global" });
 
 <template>
   <section class="flex flex-col w-full mt-5 mb-2 items-center">
-    <h1 class="text-4xl tracking-wide text-center font-black uppercase mb-8 text-sky-950 select-none">
+    <h1 class="text-4xl tracking-tighter text-center font-black uppercase mb-12 text-slate-900 drop-shadow-sm select-none">
       {{ t("app.title") }}
     </h1>
     <div class="w-full mb-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
       <YearInput />
       <LanguageSwitcher />
     </div>
-    <div class="w-full mt-2 mb-2 flex justify-center text-sky-950">
-      <h2 class="text-xl select-none">{{ t("app.holidaysForYear", { year: store.state.inputYear }) }}</h2>
-    </div>
+      <h2 class="text-xl font-medium tracking-wide text-slate-800 select-none">{{ t("app.holidaysForYear", { year: store.state.inputYear }) }}</h2>
   </section>
   <section class="flex flex-col w-full gap-y-4 mb-10">
     <Holidays :holidaysData="holidaysData" />
