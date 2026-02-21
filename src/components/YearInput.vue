@@ -40,5 +40,4 @@ const updateYear = function (amount) {
       </button>
     </div>
   </div>
-  <h2 class="block w-full text-center mt-6 mb-2 text-sky-950 text-xl select-none">Праздники в {{ inputYear }} году</h2>
 </template>

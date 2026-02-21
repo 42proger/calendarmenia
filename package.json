@@ -12,8 +12,11 @@
     "node": ">=20.19.0"
   },
   "dependencies": {
+    "@fontsource/noto-sans": "^5.2.10",
+    "@fontsource/noto-sans-armenian": "^5.2.8",
     "easter-date.js": "^0.2.0",
     "vue": "^3.5.28",
+    "vue-i18n": "^11.2.8",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

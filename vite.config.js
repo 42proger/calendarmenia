@@ -44,5 +44,20 @@ const vitePWA = VitePWA({
 
 export default defineConfig({
   plugins: [vue(), vitePWA],
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: ({ name }) => {
+          if (/\.(woff2?|ttf|otf|eot)$/i.test(name ?? "")) {
+            return "assets/fonts/[name]-[hash][extname]";
+          }
+          if (/\.(png|jpe?g|svg|gif|webp|ico)$/i.test(name ?? "")) {
+            return "assets/images/[name]-[hash][extname]";
+          }
+          return "assets/[name]-[hash][extname]";
+        },
+      },
+    },
+  },
   base: '/calendarmenia/',
 });
