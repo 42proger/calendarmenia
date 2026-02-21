@@ -5,7 +5,8 @@
     "holidaysForYear": "Праздники в {year} году"
   },
   "holidays": {
-    "moreDetails": "Подробнее"
+    "moreDetails": "Подробнее",
+    "collapse": "Свернуть"
   },
   "language": {
     "ru": "Русский",

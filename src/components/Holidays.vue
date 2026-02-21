@@ -23,8 +23,11 @@ const getHolidayDescription = (holiday) => {
   >
     <div class="w-full">
       <h4 class="pr-20 text-xl tracking-wide hyphens-auto">{{ getHolidayTitle(holiday) }}</h4>
-      <details class="block w-full text-blue-300 open:text-white hover:text-white">
-        <summary class="cursor-pointer pt-3 pb-2 font-mono select-none">{{ t("holidays.moreDetails") }}</summary>
+      <details class="group block w-full text-blue-300 open:text-white hover:text-white">
+        <summary class="cursor-pointer pt-3 pb-2 font-mono select-none">
+          <span class="group-open:hidden">{{ t("holidays.moreDetails") }}</span>
+          <span class="hidden group-open:inline">{{ t("holidays.collapse") }}</span>
+        </summary>
         <p v-html="getHolidayDescription(holiday)" class="mt-5"></p>
       </details>
     </div>
