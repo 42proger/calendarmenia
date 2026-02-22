@@ -42,7 +42,11 @@ const getBrowserLocale = () => {
 };
 
 const getInitialLocale = () => {
-  const saved = localStorage.getItem(LOCALE_STORAGE_KEY);
+  let saved = null;
+  try {
+    saved = localStorage.getItem(LOCALE_STORAGE_KEY);
+  } catch {}
+
   if (saved && SUPPORTED_LOCALES.includes(saved)) {
     return saved;
   }
@@ -67,6 +71,11 @@ export const setLocale = (nextLocale) => {
     return;
   }
   i18n.global.locale.value = nextLocale;
-  localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
-  document.documentElement.lang = nextLocale;
+  try {
+    localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+  } catch {}
+
+  if (typeof document !== "undefined") {
+    document.documentElement.lang = nextLocale;
+  }
 };

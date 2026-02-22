@@ -14,7 +14,7 @@ export default function useViewHolidays(holidaysData) {
   watch(
     () => store.state.inputYear,
     (val) => {
-      const year = parseInt(val);
+      const year = parseInt(val, 10);
       if (year >= 301 && year <= 3000) {
         inputYear.value = year;
         updateHolidays();
@@ -23,7 +23,7 @@ export default function useViewHolidays(holidaysData) {
   );
 
   const calculateHolidayDate = (holidayId) => {
-    const year = parseInt(inputYear.value);
+    const year = parseInt(inputYear.value, 10);
     if (!cachedHolidays[year]) {
       cachedHolidays[year] = calculateHolidays(year);
     }
@@ -31,7 +31,7 @@ export default function useViewHolidays(holidaysData) {
   };
 
   const updateHolidays = () => {
-    const year = parseInt(inputYear.value);
+    const year = parseInt(inputYear.value, 10);
     if (!cachedHolidays[year]) {
       cachedHolidays[year] = calculateHolidays(year);
     }
@@ -58,7 +58,7 @@ export default function useViewHolidays(holidaysData) {
     const currentYear = today.getFullYear();
     const currentMonth = today.getMonth() + 1;
     const currentDay = today.getDate();
-    const isCurrentYear = currentYear === parseInt(inputYear.value);
+    const isCurrentYear = currentYear === parseInt(inputYear.value, 10);
 
     if (isCurrentYear && holidayDate) {
       const [day, month] = holidayDate.split(".").map(Number);

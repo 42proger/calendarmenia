@@ -7,14 +7,14 @@ const localYear = ref(store.state.inputYear);
 watch(() => store.state.inputYear, (v) => localYear.value = v);
 
 const commit = () => {
-  const v = parseInt(localYear.value) || 301;
+  const v = parseInt(localYear.value, 10) || 301;
   const clamped = Math.max(301, Math.min(v, 3000));
   store.commit("setInputYear", clamped);
   localYear.value = clamped;
 };
 
 const updateYear = (n) => {
-  const v = (parseInt(localYear.value) || new Date().getFullYear()) + n;
+  const v = (parseInt(localYear.value, 10) || new Date().getFullYear()) + n;
   if (v >= 301 && v <= 3000) store.commit("setInputYear", v);
 };
 </script>
@@ -23,6 +23,7 @@ const updateYear = (n) => {
   <div id="yearForm" class="flex flex-row items-center text-lg gap-x-4">
     <div class="flex h-12 rounded-2xl overflow-hidden border border-white/60 shadow-md bg-white/85">
       <button
+        type="button"
         class="group bg-white/40 px-5 transition-colors duration-200 hover:bg-white/80 active:bg-white/20"
         @click="updateYear(-1)"
       >
@@ -31,6 +32,9 @@ const updateYear = (n) => {
       <input
         type="number"
         id="inputYear"
+        min="301"
+        max="3000"
+        step="1"
         class="w-36 text-slate-900 text-xl font-bold text-center bg-transparent tracking-tighter focus:outline-none"
         v-model="localYear"
         @blur="commit"
@@ -38,6 +42,7 @@ const updateYear = (n) => {
         @wheel.prevent="updateYear(-Math.sign($event.deltaY))"
       />
       <button
+        type="button"
         class="group bg-white/40 px-5 transition-colors duration-200 hover:bg-white/80 active:bg-white/20"
         @click="updateYear(1)"
       >

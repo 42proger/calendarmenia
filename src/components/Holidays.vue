@@ -17,8 +17,8 @@ const getHolidayDescription = (holiday) => t(`holidayDescriptions.${holiday.id}`
 <template>
   <div class="flex flex-col gap-y-4">
     <article
-      v-for="(holiday, index) in upcomingHolidays"
-      :key="'upcoming-' + index"
+      v-for="holiday in upcomingHolidays"
+      :key="'upcoming-' + holiday.id"
       class="relative flex flex-row justify-between p-7 w-full shadow-sm transition-[background-color,opacity] duration-200 glass-stabilize bg-white/80 border border-white/60 text-slate-900 rounded-[2rem] hover:bg-white/95"
     >
       <div class="w-full">
@@ -41,8 +41,8 @@ const getHolidayDescription = (holiday) => t(`holidayDescriptions.${holiday.id}`
     </h2>
 
     <article
-      v-for="(holiday, index) in passedHolidays"
-      :key="'passed-' + index"
+      v-for="holiday in passedHolidays"
+      :key="'passed-' + holiday.id"
       class="relative flex flex-row justify-between p-7 w-full shadow-sm transition-[background-color,opacity] duration-200 glass-stabilize bg-white/80 border border-white/60 text-slate-900 rounded-[2rem] opacity-60 hover:opacity-100 hover:bg-white/95"
     >
       <div class="w-full">

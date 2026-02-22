@@ -9,8 +9,8 @@
 
   body::before {
     content: "";
-    @apply fixed top-0 left-0 w-full h-full -z-10 bg-cover bg-center bg-no-repeat brightness-90;
-    background-image: url("/assets/images/mountains.svg");
+    @apply fixed top-0 left-0 w-full h-full -z-10 bg-cover bg-center bg-no-repeat;
+    background-image: linear-gradient(rgb(0 0 0 / 0.1), rgb(0 0 0 / 0.1)), url("/assets/images/mountains.svg");
   }
 
   p {
@@ -65,4 +65,11 @@
 
 #app {
   @apply backdrop-blur-[4px];
+}
+
+@media (max-width: 640px), (prefers-reduced-motion: reduce) {
+  #app {
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
 }

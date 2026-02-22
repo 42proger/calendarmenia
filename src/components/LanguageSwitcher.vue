@@ -33,7 +33,9 @@ onUnmounted(() => {
     <div class="relative inline-block w-32" ref="dropdownContainer">
       <div class="rounded-2xl overflow-hidden border border-white/60 shadow-md bg-white/90 transition-colors duration-200 hover:bg-white focus-within:ring-2 focus-within:ring-slate-900/10">
         <button
+          type="button"
           @click="isOpen = !isOpen"
+          :aria-expanded="isOpen"
           class="flex items-center justify-between w-full text-slate-900 font-bold px-5 py-2.5 focus:outline-none bg-transparent"
         >
           <span>{{ t(`language.${locale}`) }}</span>
