@@ -13,9 +13,12 @@ export default function useViewHolidays(holidaysData) {
 
   watch(
     () => store.state.inputYear,
-    (newValue) => {
-      inputYear.value = newValue;
-      updateHolidays();
+    (val) => {
+      const year = parseInt(val);
+      if (year >= 301 && year <= 3000) {
+        inputYear.value = year;
+        updateHolidays();
+      }
     }
   );
 

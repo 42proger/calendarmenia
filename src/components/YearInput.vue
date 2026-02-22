@@ -1,17 +1,21 @@
 <script setup>
-import { computed } from "vue";
+import { ref, watch } from "vue";
 import store from "../store/index.js";
 
-const inputYear = computed({
-  get: () => store.state.inputYear,
-  set: (val) => store.commit("setInputYear", val)
-});
+const localYear = ref(store.state.inputYear);
 
-const updateYear = function (amount) {
-  const year = parseInt(inputYear.value) + amount;
-  if (year >= 301 && year <= 3000) {
-    inputYear.value = year;
-  }
+watch(() => store.state.inputYear, (v) => localYear.value = v);
+
+const commit = () => {
+  const v = parseInt(localYear.value) || 301;
+  const clamped = Math.max(301, Math.min(v, 3000));
+  store.commit("setInputYear", clamped);
+  localYear.value = clamped;
+};
+
+const updateYear = (n) => {
+  const v = (parseInt(localYear.value) || new Date().getFullYear()) + n;
+  if (v >= 301 && v <= 3000) store.commit("setInputYear", v);
 };
 </script>
 
@@ -28,10 +32,9 @@ const updateYear = function (amount) {
         type="number"
         id="inputYear"
         class="w-36 text-slate-900 text-xl font-bold text-center bg-transparent tracking-tighter focus:outline-none"
-        v-model="inputYear"
-        min="1900"
-        max="2100"
-        @input="updateYear(0)"
+        v-model="localYear"
+        @blur="commit"
+        @keyup.enter="commit"
         @wheel.prevent="updateYear(-Math.sign($event.deltaY))"
       />
       <button
