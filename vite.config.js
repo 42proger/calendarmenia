@@ -11,9 +11,10 @@ const vitePWA = VitePWA({
     name: "Armenian Calendar",
     short_name: "Calendar",
     description: "A simple PWA for tracking state and religious holidays in Armenia",
-    theme_color: "#082f49",
-    background_color: "#f0eeed",
+    theme_color: "#f1f5f9",
+    background_color: "#f1f5f9",
     display: "standalone",
+    categories: ["lifestyle", "utilities"],
     icons: [
       {
         src: "assets/images/pwa-192x192.png",
