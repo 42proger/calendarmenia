@@ -22,7 +22,7 @@
   }
 
   #app {
-    @apply flex flex-col w-full max-w-screen-sm bg-white/20 sm:border sm:border-white/40 sm:rounded-[2.5rem] sm:my-10 shadow-2xl;
+    @apply flex flex-col w-full max-w-screen-sm bg-white/20 sm:border sm:border-white/40 sm:rounded-[2.5rem] sm:my-10 shadow-lg;
     padding: 1.5rem;
     padding-top: calc(1.5rem + env(safe-area-inset-top));
     padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
@@ -37,7 +37,6 @@
   }
 
   .glass-stabilize {
-    @apply subpixel-antialiased transform-gpu;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
@@ -65,5 +64,5 @@
 }
 
 #app {
-  @apply backdrop-blur-[64px];
+  @apply backdrop-blur-[16px];
 }

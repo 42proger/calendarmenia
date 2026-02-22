@@ -17,9 +17,9 @@ const updateYear = function (amount) {
 
 <template>
   <div id="yearForm" class="flex flex-row items-center text-lg gap-x-4">
-    <div class="flex h-12 rounded-2xl overflow-hidden border border-white/60 shadow-md bg-white/30 glass-effect-md">
+    <div class="flex h-12 rounded-2xl overflow-hidden border border-white/60 shadow-md bg-white/85">
       <button
-        class="group bg-white/40 px-5 transition-colors duration-300 hover:bg-white hover:backdrop-blur-none active:bg-white/20"
+        class="group bg-white/40 px-5 transition-colors duration-200 hover:bg-white/80 active:bg-white/20"
         @click="updateYear(-1)"
       >
         <svg class="w-3 h-3 text-slate-800 transition-transform group-active:scale-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M1 1h16"/></svg>
@@ -35,7 +35,7 @@ const updateYear = function (amount) {
         @wheel.prevent="updateYear(-Math.sign($event.deltaY))"
       />
       <button
-        class="group bg-white/40 px-5 transition-colors duration-300 hover:bg-white hover:backdrop-blur-none active:bg-white/20"
+        class="group bg-white/40 px-5 transition-colors duration-200 hover:bg-white/80 active:bg-white/20"
         @click="updateYear(1)"
       >
         <svg class="w-3 h-3 text-slate-800 transition-transform group-active:scale-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 1v16M1 9h16"/></svg>

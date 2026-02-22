@@ -1,7 +1,7 @@
 {
   "name": "calendarmenia",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -45,13 +45,5 @@
   "bugs": {
     "url": "https://github.com/42proger/calendarmenia/issues"
   },
-  "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "not dead",
-    "Firefox ESR",
-    "Safari >= 13",
-    "Chrome >= 76"
-  ],
   "homepage": "https://github.com/42proger/calendarmenia#readme"
 }

@@ -20,9 +20,9 @@ const getHolidayDescription = (holiday) => {
     v-for="(holiday, index) in holidays"
     :key="index"
     :class="[
-      'relative flex flex-row justify-between p-7 w-full shadow-sm transition-all duration-300 transform-gpu glass-stabilize',
-      'bg-white/50 glass-effect-md border border-white/60 text-slate-900 rounded-[2rem]',
-      'hover:scale-[1.02] hover:bg-white hover:backdrop-blur-none',
+      'relative flex flex-row justify-between p-7 w-full shadow-sm transition-[background-color,opacity] duration-200 glass-stabilize',
+      'bg-white/80 border border-white/60 text-slate-900 rounded-[2rem]',
+      'hover:bg-white/95',
       { 'order-1 opacity-60 first:mt-20 hover:opacity-100': isHolidayPassed(holiday.date) }
     ]"
   >
@@ -36,7 +36,7 @@ const getHolidayDescription = (holiday) => {
         <p v-html="getHolidayDescription(holiday)" class="mt-4 text-base leading-relaxed text-slate-800"></p>
       </details>
     </div>
-    <div class="absolute right-6 top-6 bg-white/60 glass-effect-md border border-white/40 py-2.5 px-5 h-14 rounded-2xl place-content-center text-xl font-bold tracking-tighter text-slate-900 shadow-sm select-none" >
+    <div class="absolute right-6 top-6 bg-white/80 border border-white/40 py-2.5 px-5 h-14 rounded-2xl place-content-center text-xl font-bold tracking-tighter text-slate-900 shadow-sm select-none" >
       <span>{{ holiday.date }}</span>
     </div>
   </article>
