@@ -7,7 +7,8 @@
   },
   "holidays": {
     "moreDetails": "Подробнее",
-    "collapse": "Свернуть"
+    "collapse": "Свернуть",
+    "passedHolidays": "Прошедшие праздники"
   },
   "language": {
     "ru": "Русский",
